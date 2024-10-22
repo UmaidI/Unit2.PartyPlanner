@@ -9,14 +9,17 @@
 
   const response = await fetch(`https://fsa-crud-2aa9294fe819.herokuapp.com/api/2409-ftb-et-web-ft/events`);
   const eventData = await response.json()
-  // console.log(eventData);
+  console.log(eventData);
 
     eventData.data.map((party)=>{
     const li = document.createElement(`li`)
     li.innerHTML = `
     <h3>${party.name}</h3>
+    <p>${party.date}</p>
     <p>${party.id}</p>
     <p>${party.description}</p>
+    <p>${party.location}</p>
+    <p>${party.cohortId}</p>
     `;
     
     
